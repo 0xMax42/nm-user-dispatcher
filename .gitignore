@@ -24,4 +24,6 @@ debian/debhelper-build-stamp
 debian/**/md5sums
 debian/**/postinst
 debian/**/postrm
+!debian/postinst
+!debian/postrm
 debian/nm-user-dispatcher/*
