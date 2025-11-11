@@ -1,0 +1,17 @@
+[Unit]
+Description=Per-user NetworkManager event dispatcher
+Documentation=man:nmcli(1)
+After=graphical-session.target network.target
+Wants=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/libexec/nm-user-dispatcher
+Restart=on-failure
+RestartSec=2s
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

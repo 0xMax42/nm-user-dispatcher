@@ -1,0 +1,17 @@
+Source: nm-user-dispatcher
+Section: utils
+Priority: optional
+Maintainer: 0xMax42 <debian@0xMax42.io>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
+
+Package: nm-user-dispatcher
+Architecture: all
+Depends: ${misc:Depends}, network-manager
+Description: Per-user NetworkManager event dispatcher
+ This package provides a per-user NetworkManager event dispatcher
+ that listens to nmcli monitor and triggers user-defined scripts
+ under ~/.config/networkmanager/dispatcher.d/ for events like pre-up,
+ up and down. It runs automatically for each logged-in user through
+ a systemd --user service unit.
