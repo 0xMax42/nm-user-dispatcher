@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### 🐛 Bug Fixes
 
+- *(systemd)* Update user dispatcher service dependencies - ([d07eb39](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/d07eb398cb8baba22ce3132291f5a9d77816aff7))
 - *(ci)* Update artifact copy and commit patterns for nm-user-dispatcher - ([e8569b6](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/e8569b632cb6cb985ca085cf8ee57d3acdd9aa37))
 
 ## [0.1.0] - 2025-11-11
