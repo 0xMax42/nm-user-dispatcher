@@ -2,7 +2,7 @@
 Description=Per-user NetworkManager event dispatcher
 Documentation=man:nmcli(1)
 After=graphical-session.target network.target
-Wants=graphical-session.target
+PartOf=graphical-session.target
 
 [Service]
 Type=simple
@@ -14,4 +14,4 @@ StandardOutput=journal
 StandardError=journal
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target
