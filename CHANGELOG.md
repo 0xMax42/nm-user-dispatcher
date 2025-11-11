@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### 🐛 Bug Fixes
+
+- *(ci)* Update artifact copy and commit patterns for nm-user-dispatcher - ([e8569b6](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/e8569b632cb6cb985ca085cf8ee57d3acdd9aa37))
+
 ## [0.1.0] - 2025-11-11
 
 ### 🚀 Features
