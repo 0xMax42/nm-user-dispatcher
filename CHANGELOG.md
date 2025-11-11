@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- *(debian)* Add postinst and postrm scripts for systemd user service - ([c0b0e30](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/c0b0e30c000bbe5308727d82d86eb81743e37079))
+
 ### 🐛 Bug Fixes
 
 - *(systemd)* Update user dispatcher service dependencies - ([d07eb39](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/d07eb398cb8baba22ce3132291f5a9d77816aff7))
