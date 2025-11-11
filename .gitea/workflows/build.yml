@@ -32,9 +32,9 @@ jobs:
       - name: Copy .deb + source files to debrepo nm-user-dispatcher directory
         run: |
           mkdir -p debrepo/nm-user-dispatcher
-          cp ./dist/tux-hwmon*.deb debrepo/nm-user-dispatcher/ || true
-          cp ./dist/tux-hwmon*.dsc debrepo/nm-user-dispatcher/ || true
-          cp ./dist/tux-hwmon*.tar.* debrepo/nm-user-dispatcher/ || true
+          cp ./dist/nm-user-dispatcher*.deb debrepo/nm-user-dispatcher/ || true
+          cp ./dist/nm-user-dispatcher*.dsc debrepo/nm-user-dispatcher/ || true
+          cp ./dist/nm-user-dispatcher*.tar.* debrepo/nm-user-dispatcher/ || true
 
       - name: Commit and push package artifacts to debrepo
         working-directory: debrepo
@@ -44,7 +44,7 @@ jobs:
           git config user.email "$CI_COMMIT_AUTHOR_EMAIL"
 
           # Alle neuen Artefakte hinzufügen (.deb, .dsc, .tar.*)
-          for file in nm-user-dispatcher/tux-hwmon*.{deb,dsc,tar.gz,tar.xz}; do
+          for file in nm-user-dispatcher/nm-user-dispatcher*.{deb,dsc,tar.gz,tar.xz}; do
             if [ -e "$file" ]; then
               if git ls-files --error-unmatch "$file" > /dev/null 2>&1; then
                 echo "Datei $file ist bereits im Repository – überspringe."
