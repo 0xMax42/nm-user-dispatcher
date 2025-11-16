@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### ⚙️ Miscellaneous Tasks
+
+- *(build)* Run dpkg-buildpackage clean after moving packages - ([918ca64](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/918ca6455d0e189611100fb58ee33891e0303a55))
+
 ## [0.2.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/compare/v0.1.0..v0.2.0) - 2025-11-11
 
 ### 🚀 Features
