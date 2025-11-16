@@ -55,4 +55,6 @@ for file in ../${PKG_NAME}*_${PKG_VERSION}_*.deb \
   [[ -f "$file" ]] && { mv "$file" "$DIST_DIR/"; echo "📦 Moved $(basename "$file") → $DIST_DIR/"; }
 done
 
+dpkg-buildpackage -T clean
+
 echo "✅ Build complete. Output in $DIST_DIR/"
