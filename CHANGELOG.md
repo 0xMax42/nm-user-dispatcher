@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### ⚙️ Miscellaneous Tasks
+
+- Add mit license file - ([6dd40d9](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/6dd40d98e174974bc6d28d390490d654ed7787d6))
+
 ## [0.3.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/compare/v0.3.0-pre.4..v0.3.0) - 2026-01-03
 
 ### 🚀 Features
