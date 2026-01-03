@@ -3,14 +3,15 @@ Description=Per-user NetworkManager event dispatcher
 Documentation=man:nmcli(1)
 After=graphical-session.target network.target
 PartOf=graphical-session.target
+# Start rate limiting
+StartLimitIntervalSec=60s
+StartLimitBurst=3
 
 [Service]
 Type=simple
 ExecStart=/usr/libexec/nm-user-dispatcher
 Restart=on-failure
 RestartSec=5s
-StartLimitIntervalSec=60s
-StartLimitBurst=3
 # Logging
 StandardOutput=journal
 StandardError=journal
