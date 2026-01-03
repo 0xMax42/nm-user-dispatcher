@@ -1,0 +1,122 @@
+#!/usr/bin/env bash
+#
+# User-space NetworkManager event dispatcher
+# Emits pre-up / up / down events with per-user hooks.
+#
+
+set -u
+set -o pipefail
+
+DISPATCH_DIR="${XDG_CONFIG_HOME:-${HOME}/.config}/networkmanager/dispatcher.d"
+declare -A last_state
+nmcli_pid=""
+
+# --- Initial snapshot ---------------------------------------------------------
+if ! initial_snapshot="$(LANG=C LC_ALL=C nmcli -t -f DEVICE,STATE device)"; then
+  printf 'Failed to read initial NetworkManager device state via nmcli\n' >&2
+  exit 1
+fi
+
+if [[ -n "${initial_snapshot}" ]]; then
+  while IFS=: read -r dev state; do
+    [[ -n "${dev}" ]] || continue
+    state="${state%% *}"
+    case "${state}" in
+    connected | connecting)
+      last_state["${dev}"]="connected"
+      ;;
+    *)
+      last_state["${dev}"]="disconnected"
+      ;;
+    esac
+  done <<<"${initial_snapshot}"
+fi
+
+echo "Listening for NetworkManager state changes..."
+
+# --- Utility: trigger dispatcher hooks ---------------------------------------
+trigger_hooks() {
+  local iface="$1"
+  local event="$2"
+  local hook_listing=""
+
+  [[ -d "${DISPATCH_DIR}" ]] || return 0
+
+  if ! hook_listing="$(find "${DISPATCH_DIR}" -maxdepth 1 -type f -perm -u+x -name "*.sh" -print | sort)"; then
+    local timestamp=""
+    if ! timestamp="$(date '+%F %T')"; then
+      timestamp="unknown"
+    fi
+    printf '[%s] Failed to enumerate dispatcher hooks under %s\n' \
+      "${timestamp}" "${DISPATCH_DIR}" >&2
+    return 1
+  fi
+
+  [[ -n "${hook_listing}" ]] || return 0
+
+  # Find executable .sh files, sort by name, run sequentially
+  while IFS= read -r script; do
+    [[ -n "${script}" ]] || continue
+    if [[ -x "${script}" ]]; then
+      (
+        export IFACE="${iface}"
+        export EVENT="${event}"
+        "${script}" "${iface}" "${event}"
+      ) || {
+        local timestamp=""
+        if ! timestamp="$(date '+%F %T')"; then
+          timestamp="unknown"
+        fi
+        printf '[%s] Hook failed: %s (iface=%s event=%s)\n' \
+          "${timestamp}" "${script}" "${iface}" "${event}" >&2
+      }
+    fi
+  done <<<"${hook_listing}"
+}
+
+# --- Live monitoring ----------------------------------------------------------
+coproc NMCLI_MONITOR { LANG=C LC_ALL=C nmcli monitor; }
+nmcli_pid=$!
+
+cleanup_nmcli() {
+  if [[ -n "${nmcli_pid:-}" ]]; then
+    kill "${nmcli_pid}" 2>/dev/null || true
+  fi
+}
+trap cleanup_nmcli INT TERM
+
+while read -r line <&"${NMCLI_MONITOR[0]}"; do
+  [[ "${line}" == *"NetworkManager is running"* ]] && continue
+
+  iface="${line%%:*}"
+  msg="${line#*: }"
+
+  new_state=""
+  case "${msg}" in
+  connecting\ *) new_state="connecting" ;;
+  connected) new_state="connected" ;;
+  disconnected | deactivating | "device removed") new_state="disconnected" ;;
+  *) continue ;;
+  esac
+
+  old_state="${last_state["${iface}"]:-disconnected}"
+  [[ "${new_state}" == "${old_state}" ]] && continue
+  last_state["${iface}"]="${new_state}"
+
+  event=""
+  case "${new_state}" in
+  connecting) event="pre-up" ;;
+  connected) event="up" ;;
+  disconnected) event="down" ;;
+  *) continue ;;
+  esac
+
+  timestamp=""
+  if ! timestamp="$(date '+%F %T')"; then
+    timestamp="unknown"
+  fi
+  printf '[%s] %s: %s\n' "${timestamp}" "${iface}" "${event}"
+  trigger_hooks "${iface}" "${event}"
+done
+
+wait "${nmcli_pid}"

@@ -1,2 +1,0 @@
-usr/libexec/nm-user-dispatcher usr/libexec/
-usr/lib/systemd/user/nm-user-dispatcher.service usr/lib/systemd/user/
