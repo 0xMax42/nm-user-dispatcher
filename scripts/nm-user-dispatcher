@@ -185,6 +185,7 @@ cleanup_nmcli() {
   if [[ -n "${nmcli_pid:-}" ]]; then
     kill "${nmcli_pid}" 2>/dev/null || true
   fi
+  exit 0
 }
 
 nmud_main() {
@@ -199,7 +200,7 @@ nmud_main() {
 
   coproc NMCLI_MONITOR { nmud_nmcli monitor; }
   nmcli_pid=$!
-  trap cleanup_nmcli INT TERM
+  trap cleanup_nmcli EXIT INT TERM
 
   if [[ -n "${NMCLI_MONITOR[0]:-}" ]]; then
     nmud_monitor_loop "${NMCLI_MONITOR[0]}"
