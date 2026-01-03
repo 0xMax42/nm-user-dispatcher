@@ -25,14 +25,12 @@ fi
 # End automatically added section
 
 ###############################################################################
-# Custom global enable/restart for all users
+# Custom global enable for all users
 ###############################################################################
 if [ "$1" = "configure" ] && [ -z "$DPKG_ROOT" ]; then
 	if command -v systemctl >/dev/null 2>&1; then
 		echo "Enabling nm-user-dispatcher.service globally for all users..."
 		systemctl enable --global nm-user-dispatcher.service >/dev/null 2>&1 || true
-		echo "Restarting nm-user-dispatcher.service for all users..."
-		systemctl restart --global nm-user-dispatcher.service >/dev/null 2>&1 || true
 	fi
 fi
 
