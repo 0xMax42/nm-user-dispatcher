@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### ⚙️ Miscellaneous Tasks
+
+- *(workflows)* Sync releases between gitea and github - ([a962a62](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/a962a62696b1fb7b31604d3d2e0697bf2d262d5f))
+
 ## [0.3.0-pre.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/compare/v0.2.0..v0.3.0-pre.0) (pre-release) - 2026-01-03
 
 ### 🐛 Bug Fixes
