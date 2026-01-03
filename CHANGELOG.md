@@ -12,8 +12,14 @@ All notable changes to this project will be documented in this file.
 
 - Add makefile and improve nm user dispatcher script - ([05f38ca](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/05f38cac4a7bec0557a034119e393cc8610d74df))
 
+### 🧪 Testing
+
+- Add bats tests and improve nm-user-dispatcher script - ([50322be](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/50322be538fe5df772a2246c16c4b4844626e2f3))
+
 ### ⚙️ Miscellaneous Tasks
 
+- *(debian)* Add bash and bats-core to build dependencies - ([c6b8091](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/c6b80912c695c9a99ae7d4ec0f7911e7b0f8a98b))
+- *(devcontainer)* Add vscode devcontainer for bash and bats setup - ([ad629bf](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/ad629bfeb83ca9f84ed705324fd5c8e011464f23))
 - *(ci)* Add gitea workflow to run bats tests - ([d3db84d](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/d3db84d5efc29053b0b5b2d6e51d106f254e6269))
 - *(debian)* Add homepage and copyright metadata - ([bf6659a](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/bf6659ac72a77187f807adc89a24738707bd8e91))
 - *(ci)* Update release workflow to use debcrafter and tea-pkg - ([061d37b](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/061d37b40800bf3e6a4883e46da3d9c31a835414))
