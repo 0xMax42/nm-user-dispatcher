@@ -5,10 +5,11 @@ set -e
 if [ "$1" = "purge" ]; then
 	if [ -z "$DPKG_ROOT" ] && [ -x "/usr/bin/deb-systemd-helper" ]; then
 		deb-systemd-helper --user purge 'nm-user-dispatcher.service' >/dev/null || true
+		# Reload systemd user units for all users
+		deb-systemd-invoke --user --no-dbus daemon-reload >/dev/null || true
 	fi
 fi
 # End automatically added section
-
 
 ###############################################################################
 # Custom global disable on purge
