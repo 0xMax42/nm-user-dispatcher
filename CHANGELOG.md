@@ -4,8 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- *(debian)* Add bash to package dependencies - ([6afc365](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/6afc36596a0f51096db09b38f6d501880d29a046))
+
+### 🚜 Refactor
+
+- Add makefile and improve nm user dispatcher script - ([05f38ca](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/05f38cac4a7bec0557a034119e393cc8610d74df))
+
 ### ⚙️ Miscellaneous Tasks
 
+- *(debian)* Add homepage and copyright metadata - ([bf6659a](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/bf6659ac72a77187f807adc89a24738707bd8e91))
 - *(ci)* Update release workflow to use debcrafter and tea-pkg - ([061d37b](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/061d37b40800bf3e6a4883e46da3d9c31a835414))
 - Remove git cliff configuration file - ([5c60ae0](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/5c60ae00e00f84a8a48ef90261553636397668fa))
 - *(build)* Run dpkg-buildpackage clean after moving packages - ([918ca64](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/918ca6455d0e189611100fb58ee33891e0303a55))
