@@ -5,6 +5,9 @@ Maintainer: 0xMax42 <debian@0xMax42.io>
 Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.7.0
 Rules-Requires-Root: no
+Homepage: https://git.0xmax42.io/maxp/nm-user-dispatcher
+Vcs-Git: https://git.0xmax42.io/maxp/nm-user-dispatcher.git
+Vcs-Browser: https://git.0xmax42.io/maxp/nm-user-dispatcher
 
 Package: nm-user-dispatcher
 Architecture: all
