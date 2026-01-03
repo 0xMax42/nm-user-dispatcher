@@ -29,3 +29,16 @@ jobs:
           GITEA_TOKEN: ${{ secrets.RELEASE_PUBLISH_TOKEN }}
         run: |
           tea-pkg publish-deb debrepo ./dist/*.deb
+          tea-pkg release-asset maxp/nm-user-dispatcher ${{ github.event.release.tag_name }} ./dist/*.deb
+
+      - name: Run Releases Sync Action
+        uses: https://git.0xmax42.io/actions/releases-sync@main
+        with:
+          gitea_token: ${{ secrets.RELEASE_PUBLISH_TOKEN }}
+          gitea_url: https://git.0xmax42.io
+          gitea_owner: maxp
+          gitea_repo: nm-user-dispatcher
+          tag_name: ${{ github.event.release.tag_name }}
+          github_token: ${{ secrets.SYNC_GITHUB_TOKEN }}
+          github_owner: 0xmax42
+          github_repo: nm-user-dispatcher
