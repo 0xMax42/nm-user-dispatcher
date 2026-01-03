@@ -31,7 +31,12 @@ build:
 	@:
 
 test:
-	@:
+	@if command -v bats >/dev/null 2>&1; then \
+		bats tests; \
+	else \
+		echo "bats not found; install bats-core to run tests" >&2; \
+		exit 1; \
+	fi
 
 clean:
 	@:
