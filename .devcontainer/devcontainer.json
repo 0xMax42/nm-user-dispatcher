@@ -1,0 +1,21 @@
+{
+    "name": "bash+bats (debian)",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "remoteUser": "vscode",
+    "containerEnv": {
+        "BATS_LIB_PATH": "/usr/lib/bats"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "timonwong.shellcheck",
+                "mads-hartmann.bash-ide-vscode",
+                "jetmartin.bats",
+                "rogalmic.bash-debug"
+            ]
+        }
+    },
+    "postCreateCommand": "bash -lc 'bats --version && shellcheck --version && shfmt --version'"
+}
