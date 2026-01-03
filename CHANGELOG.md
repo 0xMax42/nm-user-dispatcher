@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### 🐛 Bug Fixes
+
+- *(systemd)* Move start rate limiting to unit header section - ([e55e5de](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/e55e5de7fea8e4b19a849046b7c2d683aed311cc))
+
 ## [0.3.0-pre.1](https://git.0xmax42.io/maxp/nm-user-dispatcher/compare/v0.3.0-pre.0..v0.3.0-pre.1) (pre-release) - 2026-01-03
 
 ### 🚀 Features
