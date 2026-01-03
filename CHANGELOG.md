@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- *(systemd)* Harden nm user dispatcher service and adjust restart policy - ([5aa359b](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/5aa359b52143032ba46a35e04226f86a2422baf2))
+
+### 🐛 Bug Fixes
+
+- *(debian)* Reload systemd user units on install and purge - ([9b03ccc](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/9b03ccc64c23413f594bb6559ee9a52e3cdeba8a))
+
 ### ⚙️ Miscellaneous Tasks
 
 - *(workflows)* Sync releases between gitea and github - ([a962a62](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/a962a62696b1fb7b31604d3d2e0697bf2d262d5f))
