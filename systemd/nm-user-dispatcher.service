@@ -8,10 +8,21 @@ PartOf=graphical-session.target
 Type=simple
 ExecStart=/usr/libexec/nm-user-dispatcher
 Restart=on-failure
-RestartSec=2s
-
+RestartSec=5s
+StartLimitIntervalSec=60s
+StartLimitBurst=3
+# Logging
 StandardOutput=journal
 StandardError=journal
+# Policy
+LockPersonality=true
+RestrictRealtime=true
+ProtectClock=true
+MemoryDenyWriteExecute=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectSystem=full
 
 [Install]
 WantedBy=graphical-session.target
