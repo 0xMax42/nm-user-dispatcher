@@ -2,6 +2,45 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/compare/v0.3.0-pre.4..v0.3.0) - 2026-01-03
+
+### 🚀 Features
+
+- *(systemd)* Harden nm user dispatcher service and adjust restart policy - (from [v0.3.0-pre.1](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.1)) - ([5aa359b](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/5aa359b52143032ba46a35e04226f86a2422baf2))
+
+### 🐛 Bug Fixes
+
+- *(scripts)* Ensure nmcli monitor is cleaned up gracefully - (from [v0.3.0-pre.4](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.4)) - ([42543bf](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/42543bfb85b4ef91679da3e77525cba634b32095))
+- *(debian)* Restart and stop nm-user-dispatcher service for all users - (from [v0.3.0-pre.3](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.3)) - ([7975bc5](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/7975bc55423c4e163b4f635d7347d530251647a3))
+- *(scripts)* Ensure nmcli monitor cleanup runs on all exits - (from [v0.3.0-pre.3](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.3)) - ([5ddfe7e](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/5ddfe7eb21aa101ef4bc4527b115fbe2f83099d7))
+- *(systemd)* Move start rate limiting to unit header section - (from [v0.3.0-pre.2](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.2)) - ([e55e5de](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/e55e5de7fea8e4b19a849046b7c2d683aed311cc))
+- *(debian)* Reload systemd user units on install and purge - (from [v0.3.0-pre.1](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.1)) - ([9b03ccc](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/9b03ccc64c23413f594bb6559ee9a52e3cdeba8a))
+- *(debian)* Add bash to package dependencies - (from [v0.3.0-pre.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.0)) - ([6afc365](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/6afc36596a0f51096db09b38f6d501880d29a046))
+
+### 🚜 Refactor
+
+- Add makefile and improve nm user dispatcher script - (from [v0.3.0-pre.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.0)) - ([05f38ca](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/05f38cac4a7bec0557a034119e393cc8610d74df))
+
+### 🧪 Testing
+
+- Add bats tests and improve nm-user-dispatcher script - (from [v0.3.0-pre.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.0)) - ([50322be](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/50322be538fe5df772a2246c16c4b4844626e2f3))
+
+### ⚙️ Miscellaneous Tasks
+
+- Prepare release v0.3.0 - ([59cd3cc](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/59cd3cc379dcee62b7ca857c0bb7ea38ddebea4e))
+- *(workflows)* Sync releases between gitea and github - (from [v0.3.0-pre.1](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.1)) - ([a962a62](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/a962a62696b1fb7b31604d3d2e0697bf2d262d5f))
+- *(debian)* Add bash and bats-core to build dependencies - (from [v0.3.0-pre.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.0)) - ([c6b8091](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/c6b80912c695c9a99ae7d4ec0f7911e7b0f8a98b))
+- *(devcontainer)* Add vscode devcontainer for bash and bats setup - (from [v0.3.0-pre.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.0)) - ([ad629bf](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/ad629bfeb83ca9f84ed705324fd5c8e011464f23))
+- *(ci)* Add gitea workflow to run bats tests - (from [v0.3.0-pre.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.0)) - ([d3db84d](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/d3db84d5efc29053b0b5b2d6e51d106f254e6269))
+- *(debian)* Add homepage and copyright metadata - (from [v0.3.0-pre.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.0)) - ([bf6659a](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/bf6659ac72a77187f807adc89a24738707bd8e91))
+- *(ci)* Update release workflow to use debcrafter and tea-pkg - (from [v0.3.0-pre.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.0)) - ([061d37b](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/061d37b40800bf3e6a4883e46da3d9c31a835414))
+- Remove git cliff configuration file - (from [v0.3.0-pre.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.0)) - ([5c60ae0](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/5c60ae00e00f84a8a48ef90261553636397668fa))
+- *(build)* Run dpkg-buildpackage clean after moving packages - (from [v0.3.0-pre.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.0)) - ([918ca64](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/918ca6455d0e189611100fb58ee33891e0303a55))
+
+### ◀️ Revert
+
+- Fix(debian): restart and stop nm-user-dispatcher service for all users - (from [v0.3.0-pre.4](https://git.0xmax42.io/maxp/nm-user-dispatcher/releases/tag/v0.3.0-pre.4)) - ([1107c93](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/1107c93064a18dc78a250bf1d8103d350ffa0cd6))
+
 ## [0.3.0-pre.4](https://git.0xmax42.io/maxp/nm-user-dispatcher/compare/v0.3.0-pre.3..v0.3.0-pre.4) (pre-release) - 2026-01-03
 
 ### 🐛 Bug Fixes
