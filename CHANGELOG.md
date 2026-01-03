@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
 
 ### ⚙️ Miscellaneous Tasks
 
+- *(ci)* Add gitea workflow to run bats tests - ([d3db84d](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/d3db84d5efc29053b0b5b2d6e51d106f254e6269))
 - *(debian)* Add homepage and copyright metadata - ([bf6659a](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/bf6659ac72a77187f807adc89a24738707bd8e91))
 - *(ci)* Update release workflow to use debcrafter and tea-pkg - ([061d37b](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/061d37b40800bf3e6a4883e46da3d9c31a835414))
 - Remove git cliff configuration file - ([5c60ae0](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/5c60ae00e00f84a8a48ef90261553636397668fa))
