@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+## [0.3.0-pre.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/compare/v0.2.0..v0.3.0-pre.0) (pre-release) - 2026-01-03
 
 ### 🐛 Bug Fixes
 
