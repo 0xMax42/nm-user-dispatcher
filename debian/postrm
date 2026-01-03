@@ -12,12 +12,14 @@ fi
 # End automatically added section
 
 ###############################################################################
-# Custom global disable on purge
+# Custom global disable/stop on purge
 ###############################################################################
 if [ "$1" = "purge" ] && [ -z "$DPKG_ROOT" ]; then
 	if command -v systemctl >/dev/null 2>&1; then
 		echo "Disabling nm-user-dispatcher.service globally..."
 		systemctl disable --global nm-user-dispatcher.service >/dev/null 2>&1 || true
+		echo "Stopping nm-user-dispatcher.service for all users..."
+		systemctl stop --global nm-user-dispatcher.service >/dev/null 2>&1 || true
 	fi
 fi
 
