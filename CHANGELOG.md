@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### 🐛 Bug Fixes
 
+- *(debian)* Restart and stop nm-user-dispatcher service for all users - ([7975bc5](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/7975bc55423c4e163b4f635d7347d530251647a3))
 - *(scripts)* Ensure nmcli monitor cleanup runs on all exits - ([5ddfe7e](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/5ddfe7eb21aa101ef4bc4527b115fbe2f83099d7))
 
 ## [0.3.0-pre.2](https://git.0xmax42.io/maxp/nm-user-dispatcher/compare/v0.3.0-pre.1..v0.3.0-pre.2) (pre-release) - 2026-01-03
