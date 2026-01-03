@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### 🐛 Bug Fixes
+
+- *(scripts)* Ensure nmcli monitor cleanup runs on all exits - ([5ddfe7e](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/5ddfe7eb21aa101ef4bc4527b115fbe2f83099d7))
+
 ## [0.3.0-pre.2](https://git.0xmax42.io/maxp/nm-user-dispatcher/compare/v0.3.0-pre.1..v0.3.0-pre.2) (pre-release) - 2026-01-03
 
 ### 🐛 Bug Fixes
