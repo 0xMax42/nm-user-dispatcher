@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### ⚙️ Miscellaneous Tasks
 
+- *(workflows)* Adjust deb publishing for prerelease handling - ([b020529](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/b020529ad0a729b97b4b71ff02ae957becb3a0b3))
 - Add mit license file - ([6dd40d9](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/6dd40d98e174974bc6d28d390490d654ed7787d6))
 
 ## [0.3.0](https://git.0xmax42.io/maxp/nm-user-dispatcher/compare/v0.3.0-pre.4..v0.3.0) - 2026-01-03
