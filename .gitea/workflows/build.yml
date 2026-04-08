@@ -28,8 +28,16 @@ jobs:
           GITEA_BASE_URL: https://git.0xmax42.io
           GITEA_TOKEN: ${{ secrets.RELEASE_PUBLISH_TOKEN }}
         run: |
-          tea-pkg publish-deb debrepo ./dist/*.deb
-          tea-pkg release-asset maxp/nm-user-dispatcher ${{ github.event.release.tag_name }} ./dist/*.deb
+          distribution="generic"
+          if tea-pkg is-pre-release "${GITHUB_REPOSITORY}" "${{ github.event.release.tag_name }}"; then
+            component="unstable"
+          else
+            component="main"
+          fi
+
+          tea-pkg publish-deb debrepo ./dist/*.deb -o -d "${distribution}" -c "${component}"
+
+          tea-pkg release-asset "${GITHUB_REPOSITORY}" ${{ github.event.release.tag_name }} ./dist/*.deb
 
       - name: Run Releases Sync Action
         uses: https://git.0xmax42.io/actions/releases-sync@main
