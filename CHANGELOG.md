@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 📚 Documentation
+
+- Add project README with installation and usage guide - ([3e52939](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/3e52939b2755364cf1131685bd31b07279803bad))
+
 ### ⚙️ Miscellaneous Tasks
 
 - *(workflows)* Adjust deb publishing for prerelease handling - ([b020529](https://git.0xmax42.io/maxp/nm-user-dispatcher/commit/b020529ad0a729b97b4b71ff02ae957becb3a0b3))
